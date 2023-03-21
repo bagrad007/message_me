@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload'%>
+    <%= javascript_importmap_tags %>
     <title>MessageMe</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <div class="ui small inverted menu">
+      <div class="ui container">
+        <%= render 'layouts/partials/navigation' %>
+      </div>
+    </div>
     <%= yield %>
   </body>
+  <script>$('.ui.dropdown')
+  .dropdown()
+;</script>
 </html>
